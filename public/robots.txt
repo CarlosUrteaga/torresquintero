@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://torresquintero.edu.mx/sitemap-index.xml

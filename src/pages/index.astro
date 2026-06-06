@@ -1,0 +1,133 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Cta from "../components/Cta.astro";
+import { activities, site, whatsappUrl } from "../data/site";
+
+const news = (await getCollection("noticias", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(0, 3);
+---
+<BaseLayout>
+  <section class="hero">
+    <img src="/images/vida-escolar.jpg" alt="Comunidad escolar Torres Quintero reunida en una actividad" />
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <span class="hero-kicker">Jardín de niños y primaria</span>
+      <h1>Aprender, crecer y convivir con valores.</h1>
+      <p>Desde {site.founded}, acompañamos el desarrollo integral de nuestros estudiantes en una comunidad educativa cercana.</p>
+      <div class="button-row">
+        <a class="button" href={whatsappUrl} target="_blank" rel="noreferrer">Solicitar informes</a>
+        <a class="button button-outline" href="/modelo-educativo/">Conocer el modelo educativo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Nuestro colegio</span>
+        <h2>Educación de calidad desde 1979</h2>
+        <p class="lead">Para el Colegio Profr. Gregorio Torres Quintero, lo más importante es asegurar que sus estudiantes reciban una educación integral y significativa.</p>
+        <p>Nuestra filosofía se inspira en valores humanos como la verdad, el amor, la dignidad de la persona y la justicia.</p>
+        <a class="button button-dark" href="/colegio/">Conoce nuestra historia</a>
+      </div>
+      <div class="split-media">
+        <img src="/images/fachada.jpg" alt="Fachada del Colegio Profr. Gregorio Torres Quintero" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <span class="eyebrow">Etapas educativas</span>
+      <h2>Un espacio para cada etapa</h2>
+      <div class="grid-2 levels">
+        <article class="level-card">
+          <img src="/images/aprendizaje-preescolar.jpg" alt="Estudiante de preescolar aprendiendo con material didáctico" loading="lazy" />
+          <div><span>Jardín de niños</span><h3>Descubrir y aprender</h3><p>Actividades curriculares y extracurriculares que favorecen el desarrollo y los vínculos con la comunidad.</p><a href="/preescolar/">Conocer Preescolar →</a></div>
+        </article>
+        <article class="level-card">
+          <img src="/images/comunidad-preescolar.jpg" alt="Actividad guiada en el patio escolar" loading="lazy" />
+          <div><span>Primaria</span><h3>Construir conocimientos</h3><p>Participación activa, análisis, colaboración y formación en valores para lograr aprendizajes significativos.</p><a href="/primaria/">Conocer Primaria →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-blue">
+    <div class="container">
+      <span class="eyebrow">Propuesta educativa</span>
+      <h2>Aprendizaje integral dentro y fuera del aula</h2>
+      <p class="lead">Nuestra propuesta constructivista motiva a cada estudiante a construir conocimientos a partir de su entorno y a participar activamente en su aprendizaje.</p>
+      <div class="grid-3 activity-grid">
+        {activities.map((activity) => (
+          <article>
+            <img src={activity.image} alt="" loading="lazy" />
+            <h3>{activity.title}</h3>
+            <p>{activity.text}</p>
+          </article>
+        ))}
+      </div>
+      <a class="button" href="/modelo-educativo/">Ver propuesta educativa</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="split-media">
+        <img src="/images/instalaciones-portada.jpg" alt="Instalaciones del Colegio Torres Quintero" loading="lazy" />
+      </div>
+      <div>
+        <span class="eyebrow">Instalaciones</span>
+        <h2>Espacios para aprender y convivir</h2>
+        <p class="lead">Conoce las aulas, patios y espacios que forman parte de la vida diaria del colegio.</p>
+        <a class="button button-dark" href="/instalaciones/">Ver instalaciones</a>
+      </div>
+    </div>
+  </section>
+
+  {news.length > 0 && (
+    <section class="section section-soft">
+      <div class="container">
+        <span class="eyebrow">Noticias</span>
+        <h2>Historias de nuestra comunidad</h2>
+        <div class="grid-3">
+          {news.map((post) => (
+            <article class="card">
+              <div class="card-body">
+                <h3>{post.data.title}</h3>
+                <p>{post.data.description}</p>
+                <a href={`/noticias/${post.id}/`}>Leer noticia →</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+  <Cta title="Inscripciones abiertas para Jardín de Niños y Primaria." />
+</BaseLayout>
+
+<style>
+  .hero { position: relative; display: grid; min-height: min(760px, 82vh); align-items: end; overflow: hidden; color: white; background: var(--navy); }
+  .hero > img, .hero-overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero > img { object-fit: cover; object-position: center 42%; }
+  .hero-overlay { background: linear-gradient(90deg, rgb(9 26 52 / 88%) 0%, rgb(9 26 52 / 58%) 55%, rgb(9 26 52 / 18%) 100%); }
+  .hero-content { position: relative; z-index: 1; padding-block: clamp(4rem, 10vw, 8rem); }
+  .hero h1 { max-width: 820px; color: white; }
+  .hero p { max-width: 650px; font-size: clamp(1.05rem, 2vw, 1.3rem); }
+  .hero-kicker { display: inline-block; margin-bottom: 1rem; color: var(--yellow); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .levels { margin-top: 2rem; }
+  .level-card { position: relative; min-height: 490px; overflow: hidden; border-radius: var(--radius); color: white; background: var(--navy); }
+  .level-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 25%, rgb(9 26 52 / 92%)); }
+  .level-card img { width: 100%; height: 100%; min-height: 490px; object-fit: cover; }
+  .level-card div { position: absolute; z-index: 1; right: 0; bottom: 0; left: 0; padding: 2rem; }
+  .level-card h3 { color: white; font-size: 2rem; }
+  .level-card span { color: var(--yellow); font-weight: 700; text-transform: uppercase; }
+  .level-card a { color: var(--yellow); font-weight: 700; }
+  .activity-grid { margin: 2.5rem 0; }
+  .activity-grid article { padding: 1.4rem; border: 1px solid rgb(255 255 255 / 13%); border-radius: 1rem; background: rgb(255 255 255 / 7%); }
+  .activity-grid img { width: 64px; height: 64px; margin-bottom: 1rem; border-radius: 50%; object-fit: cover; background: white; }
+  .activity-grid p { color: #d9e4f4; font-size: .94rem; }
+</style>

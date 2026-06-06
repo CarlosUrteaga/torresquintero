@@ -14,7 +14,7 @@ The first release should avoid runtime server dependencies.
 - easy to edit in Git;
 - easy to deploy repeatedly.
 
-## Proposed Layers
+## Implemented Layers
 
 ### 1. Source snapshot
 
@@ -29,7 +29,7 @@ It includes:
 
 ### 2. Site source
 
-The future site source should contain:
+The Astro application contains:
 
 - layout templates;
 - page routes;
@@ -37,7 +37,8 @@ The future site source should contain:
 - static assets;
 - content files.
 
-Astro is the preferred framework because it fits static hosting well and keeps the output simple.
+Astro is the selected framework. It produces static HTML with no application
+server requirement.
 
 ### 3. Content layer
 
@@ -49,15 +50,20 @@ The site should prefer file-based content such as:
 
 This keeps publishing compatible with GitHub Pages.
 
-## Initial Information Architecture
+## Information Architecture
 
 - Home
-- Educational Model
-- Facilities
-- What We Do
-- Gallery
-- Admissions
-- News
+- Colegio
+- Modelo educativo
+- Niveles
+  - Preescolar
+  - Primaria
+- Vida escolar
+- Instalaciones
+- Galería
+- Noticias
+- Admisiones
+- Contacto
 
 ## Contact Architecture
 
@@ -82,9 +88,10 @@ If Instagram is added, prefer build-time ingestion over client-side widgets.
 
 ## Deployment
 
-Deployment target:
+Deployment:
 
 - GitHub Pages
-- custom domain using `CNAME`
+- custom domain `torresquintero.edu.mx` using `CNAME`
+- automated build and deploy from `main`
 
 The build should produce plain static files with no application server requirement.

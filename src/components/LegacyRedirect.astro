@@ -1,0 +1,21 @@
+---
+interface Props {
+  to: string;
+}
+
+const { to } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="refresh" content={`0;url=${to}`} />
+    <link rel="canonical" href={new URL(to, Astro.site)} />
+    <meta name="robots" content="noindex" />
+    <title>Redireccionando | Torres Quintero</title>
+  </head>
+  <body>
+    <p>La página cambió de dirección. <a href={to}>Continuar al contenido</a>.</p>
+  </body>
+</html>

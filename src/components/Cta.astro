@@ -1,0 +1,15 @@
+---
+import { whatsappUrl } from "../data/site";
+
+interface Props {
+  title?: string;
+}
+
+const { title = "Conoce nuestra propuesta educativa y resuelve tus dudas." } = Astro.props;
+---
+<section class="section">
+  <div class="container cta">
+    <h2>{title}</h2>
+    <a class="button button-dark" href={whatsappUrl} target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
+  </div>
+</section>

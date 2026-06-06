@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Cta from "../components/Cta.astro";
+import { site, whatsappUrl } from "../data/site";
+---
+<BaseLayout title="Admisiones" description="Requisitos de inscripción para Jardín de Niños y Primaria en Torres Quintero.">
+  <section class="page-hero"><div class="container"><span class="eyebrow">Admisiones e inscripciones</span><h1>Comienza una nueva etapa con nosotros.</h1><p class="lead">Consulta la documentación de ingreso y comunícate con el colegio para confirmar disponibilidad, costos y proceso.</p><div class="button-row"><a class="button button-dark" href={whatsappUrl} target="_blank" rel="noreferrer">Pedir informes por WhatsApp</a></div></div></section>
+  <section class="section"><div class="container"><div class="notice"><strong>Antes de entregar documentos:</strong> confirma directamente con el colegio que los requisitos sigan vigentes.</div><div class="grid-2 requirements"><article><h2>Jardín de Niños</h2><ul><li>Acta de nacimiento original y dos copias tamaño carta.</li><li>CURP del alumno o alumna y dos copias.</li><li>Una copia de la Cartilla Nacional de Salud.</li><li>Comprobante de domicilio.</li><li>Dos copias de la credencial INE, preferentemente de ambos padres.</li><li>Dos copias de la CURP de ambos padres.</li></ul></article><article><h2>Primaria</h2><ul><li>Acta de nacimiento original y dos copias.</li><li>Boleta de calificaciones del grado anterior.</li><li>Certificado de Preescolar; si no se cuenta con él, informarlo a Dirección.</li><li>CURP del alumno o alumna.</li><li>Una copia de la Cartilla Nacional de Salud.</li><li>Una copia del comprobante de domicilio.</li><li>Dos copias de INE y CURP, preferentemente de ambos padres.</li></ul></article></div></div></section>
+  <section class="section section-soft"><div class="container grid-2"><article><h2>Nuevo ingreso</h2><ol><li>Llenar la solicitud de inscripción.</li><li>Conocer y firmar los acuerdos de convivencia.</li><li>Entregar la documentación correspondiente al grado.</li></ol></article><article><h2>Reinscripción</h2><ol><li>Llenar la solicitud de inscripción.</li><li>Firmar los acuerdos de convivencia.</li></ol><p><strong>Informes:</strong> {site.whatsappDisplay}</p></article></div></section>
+  <Cta title="Resuelve tus dudas sobre el proceso de inscripción." />
+</BaseLayout>
+<style>.requirements{margin-top:3rem}.requirements article{padding:2rem;border-radius:var(--radius);background:var(--cream)}li{margin-bottom:.55rem}</style>

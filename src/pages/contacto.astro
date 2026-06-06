@@ -1,0 +1,8 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site, whatsappUrl } from "../data/site";
+---
+<BaseLayout title="Contacto" description="WhatsApp, correo, teléfono y ubicación del Colegio Torres Quintero.">
+  <section class="page-hero"><div class="container"><span class="eyebrow">Contacto</span><h1>Nuestras puertas están abiertas.</h1><p class="lead">Si tienes preguntas sobre el sistema académico, actividades, estudiantes o personal, comunícate directamente con nosotros.</p></div></section>
+  <section class="section"><div class="container split"><div><h2>Informes e inscripciones</h2><ul class="contact-list"><li><strong>WhatsApp</strong><br /><a href={whatsappUrl} target="_blank" rel="noreferrer">{site.whatsappDisplay}</a></li><li><strong>Teléfono</strong><br /><a href={`tel:+${site.phone}`}>{site.phoneDisplay}</a></li><li><strong>Correo</strong><br /><a href={`mailto:${site.email}`}>{site.email}</a></li><li><strong>Dirección</strong><br />{site.address}</li></ul><div class="button-row"><a class="button button-dark" href={whatsappUrl} target="_blank" rel="noreferrer">Escribir por WhatsApp</a><a class="button button-outline" href={site.mapUrl} target="_blank" rel="noreferrer">Abrir en Google Maps</a></div></div><div class="split-media"><img src="/images/fachada.jpg" alt="Fachada del Colegio Torres Quintero" /></div></div></section>
+</BaseLayout>

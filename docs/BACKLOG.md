@@ -2,38 +2,40 @@
 
 ## Now
 
-- [ ] Commit the migration snapshot
-- [ ] Decide whether to use Astro or plain static HTML
-- [ ] Define the final page list and URL structure
-- [ ] Confirm the WhatsApp number to use for the main CTA
-- [ ] Confirm whether `www.torresquintero.edu.mx` or apex domain should be primary
+- [x] Commit the migration snapshot
+- [x] Use Astro for the static rebuild
+- [x] Define the page list and URL structure
+- [x] Configure `55 3429 4293` as the main WhatsApp CTA
+- [x] Configure `torresquintero.edu.mx` as the primary domain
+- [ ] Confirm contact numbers with the school before launch
+- [ ] Confirm that all selected student photographs are authorized for publication
 
 ## Next
 
-- [ ] Create the base layout and global styles
-- [ ] Rebuild the homepage first
-- [ ] Rebuild the admissions page
-- [ ] Rebuild the educational model page
-- [ ] Rebuild the facilities page
-- [ ] Rebuild the gallery page
-- [ ] Rebuild the news page
+- [x] Create the base layout and global styles
+- [x] Rebuild the homepage
+- [x] Rebuild the admissions page
+- [x] Rebuild the educational model page
+- [x] Rebuild the facilities page
+- [x] Rebuild the gallery page
+- [x] Rebuild the news page
 
 ## Content Work
 
-- [ ] Extract clean copy from each captured HTML page
-- [ ] Rename downloaded assets into readable paths later if useful
-- [ ] Select hero images and section images for the new design
-- [ ] Remove duplicated or low-value gallery assets if needed
+- [x] Extract clean copy from each captured HTML page
+- [x] Copy selected assets into readable paths
+- [x] Select hero images and section images
+- [x] Remove duplicated or low-value assets from the published gallery
 
 ## Deployment Work
 
-- [ ] Add GitHub Pages build configuration
-- [ ] Add `CNAME` when the primary domain choice is confirmed
+- [x] Add GitHub Pages build configuration
+- [x] Add `CNAME`
 - [ ] Document DNS records for the chosen domain setup
 
 ## Later
 
-- [ ] Add Markdown-based news entries
-- [ ] Add an editorial update guide
+- [x] Add Markdown-based news entries
+- [ ] Expand the editorial update guide
 - [ ] Add Instagram link in the footer or homepage
 - [ ] Evaluate build-time Instagram integration only after launch
