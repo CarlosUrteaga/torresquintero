@@ -2,6 +2,7 @@
 import { navigation, site, whatsappUrl } from "../data/site";
 
 const pathname = Astro.url.pathname;
+const basePath = `${import.meta.env.BASE_URL.replace(/\/?$/, "/")}`;
 ---
 <header class="site-header">
   <div class="topbar">
@@ -11,15 +12,15 @@ const pathname = Astro.url.pathname;
     </div>
   </div>
   <div class="container nav-wrap">
-    <a class="brand" href="/" aria-label={`${site.name}, inicio`}>
+    <a class="brand" href="" aria-label={`${site.name}, inicio`}>
       <span class="brand-mark">
-        <img src="/images/escudo-primaria.jpg" alt="Escudo de Primaria Profr. Gregorio Torres Quintero" />
+        <img src="images/escudo-primaria.jpg" alt="Escudo de Primaria Profr. Gregorio Torres Quintero" />
       </span>
       <span><strong>Colegio</strong> Torres Quintero</span>
     </a>
     <nav class="desktop-nav" aria-label="Navegación principal">
       {navigation.map((item) => (
-        <a class:list={{ active: pathname === item.href }} href={item.href}>{item.label}</a>
+        <a class:list={{ active: pathname === `${basePath}${item.href}` }} href={item.href}>{item.label}</a>
       ))}
       <a class="nav-cta" href={whatsappUrl} target="_blank" rel="noreferrer">Pedir informes</a>
     </nav>
@@ -32,7 +33,7 @@ const pathname = Astro.url.pathname;
       </summary>
       <nav aria-label="Navegación móvil">
         {navigation.map((item) => (
-          <a class:list={{ active: pathname === item.href }} href={item.href}>{item.label}</a>
+          <a class:list={{ active: pathname === `${basePath}${item.href}` }} href={item.href}>{item.label}</a>
         ))}
         <a class="nav-cta" href={whatsappUrl} target="_blank" rel="noreferrer">Pedir informes</a>
       </nav>

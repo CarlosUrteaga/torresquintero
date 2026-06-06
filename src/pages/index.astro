@@ -10,7 +10,7 @@ const news = (await getCollection("noticias", ({ data }) => !data.draft))
 ---
 <BaseLayout>
   <section class="hero">
-    <img src="/images/vida-escolar.jpg" alt="Comunidad escolar Torres Quintero reunida en una actividad" />
+    <img src="images/vida-escolar.jpg" alt="Comunidad escolar Torres Quintero reunida en una actividad" />
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <span class="hero-kicker">Jardín de niños y primaria</span>
@@ -18,7 +18,7 @@ const news = (await getCollection("noticias", ({ data }) => !data.draft))
       <p>Desde {site.founded}, acompañamos el desarrollo integral de nuestros estudiantes en una comunidad educativa cercana.</p>
       <div class="button-row">
         <a class="button" href={whatsappUrl} target="_blank" rel="noreferrer">Solicitar informes</a>
-        <a class="button button-outline" href="/modelo-educativo/">Conocer el modelo educativo</a>
+        <a class="button button-outline" href="modelo-educativo/">Conocer el modelo educativo</a>
       </div>
     </div>
   </section>
@@ -30,10 +30,10 @@ const news = (await getCollection("noticias", ({ data }) => !data.draft))
         <h2>Educación de calidad desde 1979</h2>
         <p class="lead">Para el Colegio Profr. Gregorio Torres Quintero, lo más importante es asegurar que sus estudiantes reciban una educación integral y significativa.</p>
         <p>Nuestra filosofía se inspira en valores humanos como la verdad, el amor, la dignidad de la persona y la justicia.</p>
-        <a class="button button-dark" href="/colegio/">Conoce nuestra historia</a>
+        <a class="button button-dark" href="colegio/">Conoce nuestra historia</a>
       </div>
       <div class="split-media">
-        <img src="/images/fachada.jpg" alt="Fachada del Colegio Profr. Gregorio Torres Quintero" loading="lazy" />
+        <img src="images/fachada.jpg" alt="Fachada del Colegio Profr. Gregorio Torres Quintero" loading="lazy" />
       </div>
     </div>
   </section>
@@ -44,12 +44,12 @@ const news = (await getCollection("noticias", ({ data }) => !data.draft))
       <h2>Un espacio para cada etapa</h2>
       <div class="grid-2 levels">
         <article class="level-card">
-          <img src="/images/aprendizaje-preescolar.jpg" alt="Estudiante de preescolar aprendiendo con material didáctico" loading="lazy" />
-          <div><span>Jardín de niños</span><h3>Descubrir y aprender</h3><p>Actividades curriculares y extracurriculares que favorecen el desarrollo y los vínculos con la comunidad.</p><a href="/preescolar/">Conocer Preescolar →</a></div>
+          <img src="images/aprendizaje-preescolar.jpg" alt="Estudiante de preescolar aprendiendo con material didáctico" loading="lazy" />
+          <div><span>Jardín de niños</span><h3>Descubrir y aprender</h3><p>Actividades curriculares y extracurriculares que favorecen el desarrollo y los vínculos con la comunidad.</p><a href="preescolar/">Conocer Preescolar →</a></div>
         </article>
         <article class="level-card">
-          <img src="/images/comunidad-preescolar.jpg" alt="Actividad guiada en el patio escolar" loading="lazy" />
-          <div><span>Primaria</span><h3>Construir conocimientos</h3><p>Participación activa, análisis, colaboración y formación en valores para lograr aprendizajes significativos.</p><a href="/primaria/">Conocer Primaria →</a></div>
+          <img src="images/comunidad-preescolar.jpg" alt="Actividad guiada en el patio escolar" loading="lazy" />
+          <div><span>Primaria</span><h3>Construir conocimientos</h3><p>Participación activa, análisis, colaboración y formación en valores para lograr aprendizajes significativos.</p><a href="primaria/">Conocer Primaria →</a></div>
         </article>
       </div>
     </div>
@@ -69,20 +69,20 @@ const news = (await getCollection("noticias", ({ data }) => !data.draft))
           </article>
         ))}
       </div>
-      <a class="button" href="/modelo-educativo/">Ver propuesta educativa</a>
+      <a class="button" href="modelo-educativo/">Ver propuesta educativa</a>
     </div>
   </section>
 
   <section class="section">
     <div class="container split">
       <div class="split-media">
-        <img src="/images/instalaciones-portada.jpg" alt="Instalaciones del Colegio Torres Quintero" loading="lazy" />
+        <img src="images/instalaciones-portada.jpg" alt="Instalaciones del Colegio Torres Quintero" loading="lazy" />
       </div>
       <div>
         <span class="eyebrow">Instalaciones</span>
         <h2>Espacios para aprender y convivir</h2>
         <p class="lead">Conoce las aulas, patios y espacios que forman parte de la vida diaria del colegio.</p>
-        <a class="button button-dark" href="/instalaciones/">Ver instalaciones</a>
+        <a class="button button-dark" href="instalaciones/">Ver instalaciones</a>
       </div>
     </div>
   </section>
@@ -98,7 +98,7 @@ const news = (await getCollection("noticias", ({ data }) => !data.draft))
               <div class="card-body">
                 <h3>{post.data.title}</h3>
                 <p>{post.data.description}</p>
-                <a href={`/noticias/${post.id}/`}>Leer noticia →</a>
+                <a href={`noticias/${post.id}/`}>Leer noticia →</a>
               </div>
             </article>
           ))}
