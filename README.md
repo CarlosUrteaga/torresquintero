@@ -12,17 +12,36 @@ This repository is for rebuilding `torresquintero.edu.mx` as a self-managed stat
 
 ## Current State
 
-- The current Wix site has been captured under `snapshot/`.
-- The site structure and assets are available for migration work.
-- The rebuild has not started yet.
+- The original Wix site is preserved under `snapshot/`.
+- The replacement site is implemented with Astro.
+- Content and photography come only from the Torres Quintero snapshot.
+- GitHub Pages deployment and the custom domain are configured.
 
-## Planned Direction
+## Stack
 
-- static-first site;
-- custom domain on GitHub Pages;
-- WhatsApp, email, and map links for contact;
-- content that can later be maintained through Markdown or JSON files;
-- optional Instagram enhancement after launch.
+- Astro static output
+- Markdown content collections for news
+- GitHub Pages deployment through GitHub Actions
+- Custom domain: `torresquintero.edu.mx`
+
+## Local Development
+
+```sh
+npm install
+npm run dev
+```
+
+Validation:
+
+```sh
+npm run check
+npm run build
+```
+
+## Content Policy
+
+The site uses only Torres Quintero content and images. See
+`docs/CONTENT_SOURCES.md` for the migration mapping and editorial rules.
 
 ## Read First
 

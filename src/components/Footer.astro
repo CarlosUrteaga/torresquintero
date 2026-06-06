@@ -1,0 +1,38 @@
+---
+import { navigation, site, whatsappUrl } from "../data/site";
+---
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-title">{site.name}</p>
+      <p>Educación integral, aprendizaje significativo y formación en valores desde {site.founded}.</p>
+    </div>
+    <div>
+      <p class="footer-heading">Explora</p>
+      <div class="footer-links">
+        {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+      </div>
+    </div>
+    <div>
+      <p class="footer-heading">Contacto</p>
+      <p>{site.address}</p>
+      <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp {site.whatsappDisplay}</a><br />
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+    </div>
+  </div>
+  <div class="container copyright">
+    <span>© {new Date().getFullYear()} {site.shortName}</span>
+    <span>Nezahualcóyotl, Estado de México</span>
+  </div>
+</footer>
+
+<style>
+  footer { padding: 4rem 0 1.5rem; color: #d9e4f4; background: var(--navy); }
+  footer a { color: white; text-decoration: none; }
+  .footer-grid { display: grid; gap: 2rem; }
+  .footer-title { color: white; font-family: Georgia, "Times New Roman", serif; font-size: 1.5rem; font-weight: 700; }
+  .footer-heading { color: var(--yellow); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+  .footer-links { display: grid; gap: .35rem; }
+  .copyright { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid rgb(255 255 255 / 16%); font-size: .82rem; }
+  @media (min-width: 720px) { .footer-grid { grid-template-columns: 1.2fr .7fr 1fr; } }
+</style>

@@ -9,33 +9,33 @@
 
 ## Phase 1: Static Rebuild Foundation
 
-- [ ] Choose the static site stack
-- [ ] Scaffold the new site structure
-- [ ] Define shared layout, navigation, and footer
-- [ ] Add GitHub Pages deployment support
-- [ ] Add custom domain support plan
+- [x] Choose the static site stack
+- [x] Scaffold the new site structure
+- [x] Define shared layout, navigation, and footer
+- [x] Add GitHub Pages deployment support
+- [x] Add custom domain support plan
 
 ## Phase 2: Content Migration
 
-- [ ] Extract clean content from the snapshot
-- [ ] Rebuild each public page
-- [ ] Replace Wix-specific UX with simpler static patterns
-- [ ] Add WhatsApp, email, and map contact actions
-- [ ] Optimize and organize media assets
+- [x] Extract clean content from the snapshot
+- [x] Rebuild each public page
+- [x] Replace Wix-specific UX with simpler static patterns
+- [x] Add WhatsApp, email, and map contact actions
+- [x] Optimize and organize media assets
 
 ## Phase 3: Launch Readiness
 
-- [ ] Verify mobile and desktop layouts
-- [ ] Check SEO basics
-- [ ] Add redirects if needed for preserved URLs
+- [ ] Verify mobile and desktop layouts with the school
+- [x] Check SEO basics
+- [x] Add redirects for preserved URLs
 - [ ] Build and publish on GitHub Pages
 - [ ] Point domain to the new site
 
 ## Phase 4: Managed Fresh Content
 
-- [ ] Add file-based news content
-- [ ] Define a simple editorial workflow
-- [ ] Add reusable content collections for updates
+- [x] Add file-based news content
+- [x] Define a simple editorial workflow
+- [x] Add reusable content collections for updates
 - [ ] Document how to add news and announcements
 
 ## Phase 5: Social and Lightweight Dynamic Features

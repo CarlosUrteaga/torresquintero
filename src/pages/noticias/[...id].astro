@@ -1,0 +1,20 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection("noticias", ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <article>
+    <header class="page-hero"><div class="container"><span class="eyebrow">Noticias</span><h1>{post.data.title}</h1><p class="lead">{post.data.description}</p></div></header>
+    <section class="section"><div class="container prose"><div class="notice">Esta publicación forma parte del archivo histórico migrado del sitio anterior.</div><p class="eyebrow">{post.data.publishedAt.toLocaleDateString("es-MX", { year: "numeric", month: "long" })}</p><Content /></div></section>
+  </article>
+</BaseLayout>
+<style>.notice{margin-bottom:2rem}.prose :global(p){font-size:1.08rem}</style>

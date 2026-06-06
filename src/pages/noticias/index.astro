@@ -1,0 +1,11 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const posts = (await getCollection("noticias", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+<BaseLayout title="Noticias" description="Noticias y archivo de la comunidad Torres Quintero.">
+  <section class="page-hero"><div class="container"><span class="eyebrow">Noticias</span><h1>Historias de nuestra comunidad.</h1><p class="lead">Noticias y materiales conservados del sitio del Colegio Torres Quintero.</p></div></section>
+  <section class="section"><div class="container grid-3">{posts.map((post) => <article class="card"><div class="card-body"><p class="eyebrow">{post.data.publishedAt.toLocaleDateString("es-MX", { year: "numeric", month: "long" })}</p><h2>{post.data.title}</h2><p>{post.data.description}</p><a href={`/noticias/${post.id}/`}>Leer noticia →</a></div></article>)}</div></section>
+</BaseLayout>

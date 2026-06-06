@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Cta from "../components/Cta.astro";
+import { activities } from "../data/site";
+---
+<BaseLayout title="Modelo educativo" description="Modelo constructivista y actividades formativas del Colegio Torres Quintero.">
+  <section class="page-hero"><div class="container"><span class="eyebrow">Propuesta educativa</span><h1>Aprender haciendo, pensando y colaborando.</h1><p class="lead">Un modelo constructivista que reconoce a cada niña y niño como una persona integral y protagonista de su aprendizaje.</p></div></section>
+  <section class="section"><div class="container split"><div><span class="eyebrow">Aprendizaje significativo</span><h2>Construir conocimientos desde el entorno</h2><p>Nuestro modelo educativo motiva a los estudiantes a construir conocimientos a partir de su entorno, para que lo aprendido sea significativo y participen activamente en su propio aprendizaje.</p><p>La educación no consiste únicamente en memorizar o tomar apuntes. La participación activa fomenta el análisis, la discusión y la colaboración, lo que favorece una mejor comprensión de los contenidos.</p><p>Las clases buscan impulsar el pensamiento profundo y crítico, así como el involucramiento con el material didáctico, respetando la etapa de desarrollo de cada estudiante.</p></div><div class="split-media"><img src="/images/aprendizaje-preescolar.jpg" alt="Aprendizaje con material didáctico en Torres Quintero" /></div></div></section>
+  <section class="section section-soft"><div class="container"><span class="eyebrow">Actividades</span><h2>Una formación que amplía horizontes</h2><div class="grid-3">{activities.map((activity) => <article class="card"><img src={activity.image} alt={`Actividad de ${activity.title}`} loading="lazy" /><div class="card-body"><h3>{activity.title}</h3><p>{activity.text}</p></div></article>)}</div></div></section>
+  <Cta title="Conoce cómo acompañamos el aprendizaje de tus hijos." />
+</BaseLayout>

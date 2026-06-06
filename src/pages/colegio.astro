@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Cta from "../components/Cta.astro";
+import { site } from "../data/site";
+---
+<BaseLayout title="Nuestro colegio" description="Historia, filosofía, misión, visión y valores del Colegio Torres Quintero.">
+  <section class="page-hero"><div class="container"><span class="eyebrow">Quiénes somos</span><h1>Una comunidad educativa con historia y valores.</h1><p class="lead">El colegio fue fundado en {site.founded} con el compromiso de brindar una educación de calidad.</p></div></section>
+  <section class="section"><div class="container split"><div><span class="eyebrow">Filosofía</span><h2>Formación integral para la vida</h2><p>El Colegio Profr. Gregorio Torres Quintero está inspirado en los valores humanos, con énfasis especial en la verdad, el amor, la dignidad de la persona y la justicia.</p><p>Nos dedicamos a una formación integral que incluye el desarrollo de la inteligencia para analizar, sintetizar y formar juicios críticos. También promovemos la voluntad, la autodisciplina y la libertad en los ámbitos personal, familiar y social.</p></div><div class="split-media"><img src="/images/vida-escolar.jpg" alt="Comunidad educativa Torres Quintero" /></div></div></section>
+  <section class="section section-soft"><div class="container grid-3"><article class="card"><div class="card-body"><h2>Misión</h2><p>Brindar a nuestros estudiantes atención educativa con equidad, propiciando su desarrollo integral a través del trabajo de un equipo multidisciplinario de profesores.</p></div></article><article class="card"><div class="card-body"><h2>Visión</h2><p>Consolidarnos como un equipo armónico de profesionales expertos en nuestras áreas, manteniendo una actitud de excelencia para incidir integralmente en los estudiantes.</p></div></article><article class="card"><div class="card-body"><h2>Valores</h2><p>Nuestra relación de confianza se fundamenta en:</p><p><strong>Disciplina · Respeto · Trabajo</strong></p></div></article></div></section>
+  <Cta />
+</BaseLayout>

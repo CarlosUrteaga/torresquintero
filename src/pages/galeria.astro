@@ -1,0 +1,10 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Cta from "../components/Cta.astro";
+import { gallery } from "../data/site";
+---
+<BaseLayout title="Galería" description="Galería de actividades e instalaciones de Torres Quintero.">
+  <section class="page-hero"><div class="container"><span class="eyebrow">Galería</span><h1>Momentos de la vida escolar.</h1><p class="lead">Imágenes del archivo del Colegio Profr. Gregorio Torres Quintero.</p></div></section>
+  <section class="section"><div class="container gallery">{gallery.map((photo) => <img src={photo.src} alt={photo.alt} loading="lazy" />)}</div></section>
+  <Cta />
+</BaseLayout>
