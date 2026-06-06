@@ -2,7 +2,8 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://torresquintero.edu.mx",
+  site: "https://urteaga.tech",
+  base: "/torresquintero",
   output: "static",
   integrations: [sitemap()],
 });
