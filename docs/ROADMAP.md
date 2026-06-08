@@ -40,7 +40,7 @@
 
 ## Phase 5: Social and Lightweight Dynamic Features
 
-- [ ] Add Instagram link and profile CTA
-- [ ] Decide whether Instagram content belongs on-site
+- [x] Add Instagram link and profile CTA
+- [x] Decide whether Instagram content belongs on-site
 - [ ] If justified, add build-time Instagram ingestion
 - [ ] Add selected highlights to the homepage or news area

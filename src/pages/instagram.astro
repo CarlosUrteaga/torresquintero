@@ -1,0 +1,169 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Cta from "../components/Cta.astro";
+import { site } from "../data/site";
+---
+<BaseLayout
+  title="Instagram"
+  description={`Consulta las actividades y novedades del Colegio Torres Quintero en Instagram ${site.instagramHandle}.`}
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Instagram</span>
+      <h1>La vida escolar, también en Instagram.</h1>
+      <p class="lead">
+        Consulta actividades, celebraciones y novedades publicadas por el colegio en
+        <strong>{site.instagramHandle}</strong>.
+      </p>
+      <div class="button-row">
+        <a class="button" href={site.instagramUrl} target="_blank" rel="noreferrer">
+          Ver perfil en Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <span class="eyebrow">Publicación reciente</span>
+      <div class="featured-post">
+        <a
+          class="featured-image"
+          href={site.instagramUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Ver el perfil del colegio en Instagram"
+        >
+          <img
+            src="images/curso-verano-2026.png"
+            alt="Curso de verano 2026 para niñas y niños de 5 a 13 años, del 20 de julio al 21 de agosto"
+            loading="lazy"
+          />
+        </a>
+        <div class="featured-copy">
+          <span class="eyebrow">Curso de verano 2026</span>
+          <h2>Aprendemos, jugamos y nos divertimos.</h2>
+          <p class="lead">
+            Actividades de cocina, manualidades, experimentos, arte, pintura,
+            juegos mundialistas y danza para niñas y niños de 5 a 13 años.
+          </p>
+          <ul class="post-details">
+            <li><strong>Fechas:</strong> del 20 de julio al 21 de agosto de 2026</li>
+            <li><strong>Horario:</strong> de 9:00 a 13:30 horas</li>
+            <li><strong>Informes:</strong> 55 1930 7420</li>
+          </ul>
+          <div class="button-row">
+            <a class="button" href="https://wa.me/5215519307420" target="_blank" rel="noreferrer">
+              Pedir informes del curso
+            </a>
+            <a class="button button-outline" href={site.instagramUrl} target="_blank" rel="noreferrer">
+              Ver en Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container social-panel">
+      <div class="social-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+          <circle cx="12" cy="12" r="4"></circle>
+          <circle class="social-dot" cx="17.4" cy="6.8" r="1"></circle>
+        </svg>
+      </div>
+      <div>
+        <span class="eyebrow">Perfil oficial</span>
+        <h2 class="social-handle">
+          <a href={site.instagramUrl} target="_blank" rel="noreferrer">
+            {site.instagramHandle}
+          </a>
+        </h2>
+        <p class="lead">
+          Las publicaciones se muestran directamente en Instagram mientras preparamos
+          una conexión autorizada para seleccionar novedades en este sitio.
+        </p>
+        <p class="notice">
+          Instagram es un canal complementario. La información institucional,
+          admisiones y medios de contacto se mantienen disponibles en este sitio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Cta />
+</BaseLayout>
+
+<style>
+  .social-panel {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+  .featured-post {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .featured-image {
+    display: block;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: white;
+    box-shadow: var(--shadow);
+  }
+  .featured-image img {
+    width: 100%;
+    height: auto;
+  }
+  .featured-copy { min-width: 0; }
+  .post-details {
+    display: grid;
+    gap: .5rem;
+    padding: 0;
+    list-style: none;
+  }
+  .post-details strong { color: var(--navy); }
+  .social-panel > div { min-width: 0; }
+  .social-mark {
+    display: grid;
+    width: min(280px, 70vw);
+    aspect-ratio: 1;
+    place-items: center;
+    border-radius: 30%;
+    background:
+      radial-gradient(circle at 32% 100%, #ffd600 0 21%, #ff7a00 36%, transparent 56%),
+      linear-gradient(135deg, #7a2cff, #d62976 55%, #feda75);
+    box-shadow: var(--shadow);
+  }
+  .social-mark svg {
+    width: 58%;
+    fill: none;
+    stroke: white;
+    stroke-width: 1.7;
+  }
+  .social-dot { fill: white; stroke: none; }
+  .social-handle {
+    overflow-wrap: anywhere;
+    font-size: clamp(1.8rem, 4.2vw, 3.6rem);
+  }
+  .social-handle a {
+    color: inherit;
+    text-decoration-color: var(--yellow);
+    text-decoration-thickness: .12em;
+    text-underline-offset: .15em;
+  }
+  .social-handle a:hover { color: var(--blue); }
+  .social-handle a:focus-visible {
+    border-radius: .15em;
+    outline: 3px solid var(--yellow);
+    outline-offset: .1em;
+  }
+  @media (min-width: 720px) {
+    .featured-post { grid-template-columns: minmax(280px, .75fr) minmax(0, 1.25fr); }
+    .social-panel { grid-template-columns: minmax(220px, 320px) minmax(0, 1fr); }
+  }
+</style>
