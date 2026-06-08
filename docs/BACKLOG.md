@@ -37,5 +37,6 @@
 
 - [x] Add Markdown-based news entries
 - [ ] Expand the editorial update guide
-- [ ] Add Instagram link in the footer or homepage
+- [x] Add Instagram link and dedicated page
+- [ ] Configure authorized build-time Instagram ingestion
 - [ ] Evaluate build-time Instagram integration only after launch

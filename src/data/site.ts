@@ -13,6 +13,8 @@ export const site = {
     "Valle de Florido 113, Valle de Aragón 1ra Secc., C.P. 57100, Nezahualcóyotl, Estado de México",
   mapUrl:
     "https://www.google.com/maps/place/Valle+de+Florido+113,+Valle+de+Aragon+1ra+Secc,+57100+Nezahualc%C3%B3yotl,+M%C3%A9x./@19.4911521,-99.0600967,17z",
+  instagramHandle: "@profr.gregoriotorresquintero",
+  instagramUrl: "https://www.instagram.com/profr.gregoriotorresquintero/",
 } as const;
 
 export const whatsappUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
@@ -25,6 +27,7 @@ export const navigation = [
   { href: "modelo-educativo/", label: "Modelo educativo" },
   { href: "niveles/", label: "Niveles" },
   { href: "vida-escolar/", label: "Vida escolar" },
+  { href: "instagram/", label: "Instagram" },
   { href: "admisiones/", label: "Admisiones" },
   { href: "contacto/", label: "Contacto" },
 ] as const;
