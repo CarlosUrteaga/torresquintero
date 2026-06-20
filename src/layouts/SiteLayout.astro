@@ -1,0 +1,76 @@
+---
+import '../styles/global.css';
+import { navigation, site, whatsAppUrl } from '../data/site';
+
+interface Props {
+	title: string;
+	description?: string;
+	hideHeader?: boolean;
+	fullBleed?: boolean;
+}
+
+const { title, description = site.description, hideHeader = false, fullBleed = false } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<title>{title} | {site.title}</title>
+	</head>
+	<body>
+		<div class:list={['site-shell', fullBleed && 'site-shell--fullbleed']}>
+			{
+				!hideHeader && (
+					<header class="site-header">
+						<div class="brand-block">
+							<a href="/" class="brand-mark">TQ</a>
+							<div>
+								<p class="eyebrow">Nezahualcoyotl, Edo. Mex.</p>
+								<a href="/" class="brand-name">{site.title}</a>
+							</div>
+						</div>
+						<nav class="site-nav" aria-label="Principal">
+							{
+								navigation.map((item) => (
+									<a href={item.href} aria-current={pathname === item.href ? 'page' : undefined}>
+										{item.label}
+									</a>
+								))
+							}
+						</nav>
+						<a class="whatsapp-pill" href={whatsAppUrl} target="_blank" rel="noreferrer">
+							WhatsApp
+						</a>
+					</header>
+				)
+			}
+			<main>
+				<slot />
+			</main>
+			<footer class="site-footer">
+				<div>
+					<p class="eyebrow">Contacto directo</p>
+					<p>{site.address}</p>
+				</div>
+				<div class="footer-links">
+					<a href={whatsAppUrl} target="_blank" rel="noreferrer">WhatsApp {site.whatsAppLabel}</a>
+					<a href={`mailto:${site.email}`}>{site.email}</a>
+					<a href={site.mapUrl} target="_blank" rel="noreferrer">Como llegar</a>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

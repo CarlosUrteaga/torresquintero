@@ -1,0 +1,22 @@
+---
+import InfoGrid from '../components/InfoGrid.astro';
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const sections = [
+	{ title: 'Espacios visibles', text: 'La nueva version permitira organizar mejor fotografias, descripciones y recorridos de las instalaciones.' },
+	{ title: 'Carga rapida', text: 'Astro y GitHub Pages reducen peso y complejidad para que las imagenes se sirvan con menos friccion.' },
+	{ title: 'Ruta estable', text: 'Se mantiene el slug actual para no romper referencias mientras migramos el contenido definitivo.' },
+];
+---
+
+<SiteLayout title="Instalaciones">
+	<div class="page-stack">
+		<PageHero
+			eyebrow="Instalaciones"
+			title="Espacios del colegio, reorganizados con una mejor lectura."
+			lede="La pagina de instalaciones quedara preparada para mostrar espacios, imagenes y recorridos sin depender del constructor visual de Wix."
+		/>
+		<InfoGrid items={sections} />
+	</div>
+</SiteLayout>

@@ -1,0 +1,22 @@
+---
+import InfoGrid from '../components/InfoGrid.astro';
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const galleryPlan = [
+	{ title: 'Migracion de imagenes', text: 'Ya existe un snapshot local con archivos originales para seleccionar y optimizar la galeria.' },
+	{ title: 'Curaduria', text: 'La nueva galeria podra reducir duplicados y priorizar imagenes con mejor valor institucional.' },
+	{ title: 'Escalabilidad', text: 'Despues del lanzamiento podremos separar albums o eventos sin cambiar de plataforma.' },
+];
+---
+
+<SiteLayout title="Galeria">
+	<div class="page-stack">
+		<PageHero
+			eyebrow="Galeria"
+			title="Una galeria mas limpia, ligera y facil de actualizar."
+			lede="Esta seccion conserva la URL publica actual y marca el espacio donde integraremos la seleccion final de fotografias del colegio."
+		/>
+		<InfoGrid items={galleryPlan} />
+	</div>
+</SiteLayout>

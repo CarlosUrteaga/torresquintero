@@ -1,0 +1,22 @@
+---
+import InfoGrid from '../components/InfoGrid.astro';
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const newsPlan = [
+	{ title: 'Noticias del sitio', text: 'Esta pagina se convertira en la base de noticias y novedades institucionales editables.' },
+	{ title: 'Markdown despues', text: 'La siguiente fase podra mover esta seccion a entradas Markdown con una ruta mas simple de actualizacion.' },
+	{ title: 'Instagram como apoyo', text: 'La estrategia futura es usar Instagram como complemento, no como dependencia del sitio.' },
+];
+---
+
+<SiteLayout title="Noticias">
+	<div class="page-stack">
+		<PageHero
+			eyebrow="Noticias"
+			title="Un espacio listo para actualizaciones reales."
+			lede="La pagina de noticias quedara preparada para dejar de ser estatica poco a poco, primero con archivos locales y despues, si conviene, con integracion social controlada."
+		/>
+		<InfoGrid items={newsPlan} />
+	</div>
+</SiteLayout>

@@ -1,0 +1,33 @@
+---
+import InfoGrid from '../components/InfoGrid.astro';
+import PageHero from '../components/PageHero.astro';
+import { site, whatsAppUrl } from '../data/site';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const flow = [
+	{ title: 'Primer contacto', text: 'El CTA principal sera WhatsApp para responder dudas y agendar visitas sin friccion.' },
+	{ title: 'Informacion clara', text: 'La pagina de admisiones quedara lista para resumir requisitos, niveles y proceso de ingreso.' },
+	{ title: 'Siguiente evolucion', text: 'Si despues se necesita un formulario, se agregara sobre una necesidad real, no por inercia.' },
+];
+---
+
+<SiteLayout title="Admisiones">
+	<div class="page-stack">
+		<PageHero
+			eyebrow="Admisiones"
+			title="Mas facil pedir informes y comenzar el proceso."
+			lede="La estrategia de lanzamiento reemplaza el formulario complejo por un canal directo de WhatsApp, manteniendo correo y mapa como apoyos secundarios."
+		/>
+		<InfoGrid items={flow} />
+		<section class="contact-band">
+			<h2>Canal principal</h2>
+			<p>El numero oficial confirmado para esta etapa es {site.whatsAppLabel}.</p>
+			<div class="cta-row">
+				<a class="cta-link primary" href={whatsAppUrl} target="_blank" rel="noreferrer">
+					Escribir por WhatsApp
+				</a>
+				<a class="cta-link secondary" href={`mailto:${site.email}`}>Enviar correo</a>
+			</div>
+		</section>
+	</div>
+</SiteLayout>

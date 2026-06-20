@@ -1,0 +1,164 @@
+---
+import { site, whatsAppUrl } from '../data/site';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { navigation } from '../data/site';
+---
+
+<SiteLayout title="Inicio" hideHeader={true} fullBleed={true}>
+	<div class="page-stack">
+		<section class="landing-hero">
+			<nav class="landing-hero__nav" aria-label="Principal">
+				{
+					navigation.map((item) => (
+						<a href={item.href} class={item.href === '/' ? 'is-active' : undefined}>
+							{item.label}
+						</a>
+					))
+				}
+				<a href={site.mapUrl} target="_blank" rel="noreferrer" class="landing-hero__pin">
+					&#9679;
+				</a>
+			</nav>
+			<div class="landing-hero__topline">
+				<a href={`mailto:${site.email}`}>{site.email}</a>
+				<span>INFORMES E INSCRIPCIONES: 55 3429-4293</span>
+			</div>
+			<div class="landing-hero__banner">
+				<div class="landing-hero__aside landing-hero__aside--left">
+					<p>¡Inscripciones<br />abiertas!</p>
+				</div>
+				<div class="landing-hero__center">
+					<img src="/images/logos-banner.jpg" alt="Logos del colegio" class="landing-hero__logos" />
+					<h1 class="landing-hero__title">Colegio Profr. Gregorio Torres Quintero</h1>
+					<p>
+						El Colegio fue fundado en 1979 y para nosotros lo mas importante es asegurar que sus
+						hijos reciban una educacion de calidad.
+					</p>
+				</div>
+				<div class="landing-hero__aside landing-hero__aside--right">
+					<p>¡Aproveche<br />nuestras<br />promociones!</p>
+					<span>Completa nuestro formulario para validar las promociones.</span>
+				</div>
+			</div>
+			<img src="/images/hero-campus.jpg" alt="Fachada del colegio" class="landing-hero__photo" />
+			<a class="floating-contact" href={whatsAppUrl} target="_blank" rel="noreferrer">
+				Contáctanos
+			</a>
+		</section>
+
+		<section class="info-grid">
+			<article class="info-card">
+				<p class="eyebrow">Mision</p>
+				<h2>Atencion educativa con equidad.</h2>
+				<p>
+					Brindar a nuestros estudiantes atencion educativa con equidad, propiciando su
+					desarrollo integral a traves del trabajo de un equipo multidisciplinario de profesores.
+				</p>
+			</article>
+			<article class="info-card">
+				<p class="eyebrow">Vision</p>
+				<h2>Excelencia con formacion integral.</h2>
+				<p>
+					Consolidarnos como un equipo armonico de profesionales expertos en nuestras areas,
+					manteniendo una actitud de excelencia, con el fin de incidir integralmente en los
+					estudiantes.
+				</p>
+			</article>
+			<article class="info-card">
+				<p class="eyebrow">Valores</p>
+				<h2>Verdad, amor, dignidad y justicia.</h2>
+				<p>
+					El colegio esta inspirado en los valores humanos con enfasis especial en la verdad, el
+					amor, la dignidad de la persona y la justicia.
+				</p>
+			</article>
+		</section>
+
+		<section class="feature-band">
+			<p class="eyebrow">Formacion integral</p>
+			<h2>Desarrollo intelectual, voluntad y juicio critico.</h2>
+			<p>
+				Nos dedicamos a la formacion integral que incluye el desarrollo de la inteligencia para
+				que la persona sea capaz de analizar, sintetizar y formar juicios criticos. Ademas,
+				promovemos la educacion de la voluntad, la autodisciplina y la libertad a nivel
+				personal, familiar y social.
+			</p>
+		</section>
+
+		<section class="feature-band feature-band--full">
+			<p class="eyebrow">Informes</p>
+			<h2>Siempre con puertas abiertas.</h2>
+			<p>
+				El Colegio Profr. Gregorio Torres Quintero siempre tiene sus puertas abiertas. Si tiene
+				alguna pregunta sobre nuestro sistema academico, nuestros eventos, estudiantes o
+				personal, no dude en contactarnos.
+			</p>
+			<div class="cta-row">
+				<a class="cta-link primary" href={whatsAppUrl} target="_blank" rel="noreferrer">
+					WhatsApp {site.whatsAppLabel}
+				</a>
+				<a class="cta-link secondary" href={`mailto:${site.email}`}>{site.email}</a>
+			</div>
+		</section>
+
+		<section class="feature-band feature-band--full">
+			<p class="eyebrow">Filosofia</p>
+			<h2>Una relacion de confianza con base humana.</h2>
+			<p>
+				El Colegio Profr. Gregorio Torres Quintero esta inspirado en los valores humanos con
+				enfasis especial en la verdad, el amor, la dignidad de la persona y la justicia.
+			</p>
+			<p>
+				Nuestro equipo procura establecer una relacion de confianza fincada en tres valores
+				fundamentales y en una atencion cercana a estudiantes y familias.
+			</p>
+		</section>
+
+		<section class="contact-grid">
+			<article class="info-card contact-card">
+				<p class="eyebrow">Contacto</p>
+				<h2>Informes e inscripciones</h2>
+				<p>
+					Valle de Florido 113, Valle de Aragon 1ra Secc, C.P. 57100, Nezahualcoyotl, Edomex.
+				</p>
+				<ul class="bullet-list">
+					<li>Telefono: 55 5120-4530</li>
+					<li>WhatsApp: 55 3429-4293</li>
+					<li>Correo: {site.email}</li>
+				</ul>
+			</article>
+			<article class="info-card map-card">
+				<p class="eyebrow">Ubicacion</p>
+				<h2>Visitanos en Valle de Florido 113</h2>
+				<p>
+					El plantel se encuentra en Valle de Aragon 1ra Seccion, con acceso directo desde el
+					mapa y contacto inmediato por WhatsApp.
+				</p>
+				<div class="cta-row">
+					<a class="cta-link secondary" href={site.mapUrl} target="_blank" rel="noreferrer">
+						Abrir mapa
+					</a>
+					<a class="cta-link secondary" href={`mailto:${site.email}`}>Enviar correo</a>
+				</div>
+			</article>
+		</section>
+
+		<section class="contact-band">
+			<p class="eyebrow">Contacto</p>
+			<h2>Contacto directo desde el primer clic.</h2>
+			<p>
+				En esta nueva etapa el sitio pone primero el contacto rapido. WhatsApp es el canal
+				principal y el correo y el mapa quedan como apoyo para familias y aspirantes.
+			</p>
+			<div class="cta-row">
+				<a class="cta-link primary" href={whatsAppUrl} target="_blank" rel="noreferrer">
+					WhatsApp {site.whatsAppLabel}
+				</a>
+				<a class="cta-link secondary" href={`mailto:${site.email}`}>{site.email}</a>
+				<a class="cta-link secondary" href={site.mapUrl} target="_blank" rel="noreferrer">
+					Ver ubicacion
+				</a>
+			</div>
+		</section>
+	</div>
+</SiteLayout>

@@ -1,0 +1,22 @@
+---
+import InfoGrid from '../components/InfoGrid.astro';
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const pillars = [
+	{ title: 'Base academica', text: 'El contenido final se migrara desde Wix a una presentacion mas clara y facil de mantener.' },
+	{ title: 'Acompanamiento', text: 'La propuesta del sitio destacara seguimiento cercano, comunicacion con familias y orden institucional.' },
+	{ title: 'Continuidad', text: 'Esta ruta deja el sitio listo para crecer con noticias y contenido editorial sin rehacer la base.' },
+];
+---
+
+<SiteLayout title="Modelo Educativo">
+	<div class="page-stack">
+		<PageHero
+			eyebrow="Modelo Educativo"
+			title="Una presentacion mas clara del proyecto escolar."
+			lede="Esta pagina conserva la ruta historica del sitio Wix y servira para reconstruir el contenido del modelo educativo con mejor jerarquia, lectura y mantenimiento."
+		/>
+		<InfoGrid items={pillars} />
+	</div>
+</SiteLayout>

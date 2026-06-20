@@ -1,0 +1,22 @@
+---
+import InfoGrid from '../components/InfoGrid.astro';
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const actions = [
+	{ title: 'Actividades', text: 'La estructura final podra mostrar talleres, eventos y seguimiento escolar de forma mas ordenada.' },
+	{ title: 'Comunidad', text: 'El sitio puede resaltar mejor la vida diaria del colegio sin depender de modulos cerrados.' },
+	{ title: 'Contenido editable', text: 'Mas adelante esta seccion puede alimentarse desde archivos Markdown o JSON.' },
+];
+---
+
+<SiteLayout title="Que Hacemos">
+	<div class="page-stack">
+		<PageHero
+			eyebrow="Que Hacemos"
+			title="La actividad escolar tendra un lugar mas vivo y mas simple."
+			lede="Esta ruta queda lista para reconstruir la narrativa de la vida estudiantil con mejor orden visual y una base mas flexible para futuras actualizaciones."
+		/>
+		<InfoGrid items={actions} />
+	</div>
+</SiteLayout>
