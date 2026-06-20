@@ -9,18 +9,18 @@
 
 ## Phase 1: Static Rebuild Foundation
 
-- [ ] Choose the static site stack
-- [ ] Scaffold the new site structure
-- [ ] Define shared layout, navigation, and footer
-- [ ] Add GitHub Pages deployment support
-- [ ] Add custom domain support plan
+- [x] Choose the static site stack
+- [x] Scaffold the new site structure
+- [x] Define shared layout, navigation, and footer
+- [x] Add GitHub Pages deployment support
+- [x] Add custom domain support plan
 
 ## Phase 2: Content Migration
 
 - [ ] Extract clean content from the snapshot
 - [ ] Rebuild each public page
 - [ ] Replace Wix-specific UX with simpler static patterns
-- [ ] Add WhatsApp, email, and map contact actions
+- [x] Add WhatsApp, email, and map contact actions
 - [ ] Optimize and organize media assets
 
 ## Phase 3: Launch Readiness
