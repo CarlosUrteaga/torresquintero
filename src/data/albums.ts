@@ -151,7 +151,7 @@ export const albums = [
 ] satisfies Album[];
 
 export function photoPath(album: Album, photo: AlbumPhoto) {
-  return `albums/${album.slug}/${photo.file}`;
+  return `/albums/${album.slug}/${photo.file}`;
 }
 
 export function getAlbumPhotos(album: Album) {

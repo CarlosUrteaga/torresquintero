@@ -12,7 +12,7 @@ const albums = getAlbums();
       {albums.map((album) => {
         const cover = getAlbumCover(album);
         return (
-          <a class="album-card" href={`galeria/${album.slug}/`}>
+          <a class="album-card" href={`/galeria/${album.slug}/`}>
             <img src={photoPath(album, cover)} alt={cover.alt} loading="lazy" />
             <div>
               <p class="eyebrow">{album.photos.length} fotos</p>
