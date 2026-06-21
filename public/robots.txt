@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://urteaga.tech/torresquintero/sitemap-index.xml
+Sitemap: https://torresquintero.edu.mx/sitemap-index.xml
