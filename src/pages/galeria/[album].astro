@@ -1,0 +1,44 @@
+---
+import type { GetStaticPaths } from "astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Cta from "../../components/Cta.astro";
+import { albums, getAlbumCover, getAlbumPhotos, photoPath } from "../../data/albums";
+
+export const getStaticPaths = (() =>
+  albums.map((album) => ({
+    params: { album: album.slug },
+    props: { album },
+  }))) satisfies GetStaticPaths;
+
+const { album } = Astro.props;
+const photos = getAlbumPhotos(album);
+const cover = getAlbumCover(album);
+---
+<BaseLayout title={album.title} description={album.description} image={photoPath(album, cover)}>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Galería</span>
+      <h1>{album.title}</h1>
+      <p class="lead">{album.description}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container gallery">
+      {photos.map((photo) => (
+        <figure>
+          <img src={photoPath(album, photo)} alt={photo.alt} loading="lazy" />
+          {photo.caption && <figcaption>{photo.caption}</figcaption>}
+        </figure>
+      ))}
+    </div>
+  </section>
+  <Cta />
+</BaseLayout>
+
+<style>
+  figure { margin: 0; }
+  figcaption { margin-top: .5rem; color: var(--muted); font-size: .9rem; }
+  .gallery img { box-shadow: var(--shadow); }
+  .gallery figure { break-inside: avoid; }
+  .gallery img { height: auto; aspect-ratio: 3 / 4; }
+</style>
