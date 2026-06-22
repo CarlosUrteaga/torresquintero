@@ -27,6 +27,7 @@ export const navigation = [
   { href: "/modelo-educativo/", label: "Modelo educativo" },
   { href: "/niveles/", label: "Niveles" },
   { href: "/vida-escolar/", label: "Vida escolar" },
+  { href: "/galeria/", label: "Galería" },
   { href: "/instagram/", label: "Instagram" },
   { href: "/admisiones/", label: "Admisiones" },
   { href: "/contacto/", label: "Contacto" },
