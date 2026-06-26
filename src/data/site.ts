@@ -24,10 +24,10 @@ export const whatsappUrl = `https://wa.me/${site.whatsapp}?text=${encodeURICompo
 export const navigation = [
   { href: "/", label: "Inicio" },
   { href: "/colegio/", label: "Colegio" },
+  { href: "/galeria/", label: "Galería" },
   { href: "/modelo-educativo/", label: "Modelo educativo" },
   { href: "/niveles/", label: "Niveles" },
   { href: "/vida-escolar/", label: "Vida escolar" },
-  { href: "/galeria/", label: "Galería" },
   { href: "/instagram/", label: "Instagram" },
   { href: "/admisiones/", label: "Admisiones" },
   { href: "/contacto/", label: "Contacto" },
